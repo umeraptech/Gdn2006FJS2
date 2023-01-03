@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example1</title>
+</head>
+<body>
+    <h1>JavaScript Regular Expression</h1>
+    <p id="demo1"></p>
+    <p id="demo2">the lazy brown dog jumps over The lazy overcrooked dog</p>
+
+    <p><button onclick="myFunction1(); return false;">Demo 1</button></p>
+    <p><button onclick="myFunction2(); return false;">Demo 2  case Sensitive</button></p>
+    <p><button onclick="myFunction3(); return false;">Demo 3  case Insensitive</button></p>
+    <p><button onclick="myFunction4(); return false;">Demo 4  case Global match</button></p>
+    <p><button onclick="myFunction5(); return false;">Demo 5 Test Function</button></p>
+    <p><button onclick="myFunction6(); return false;">Demo 6 Match Function</button></p>
+    <p><button onclick="myFunction7(); return false;">Demo 7 Exec Function</button></p>
+    <a href="form.html">Form validation</a>
+
+
+
+    <script>
+        function myFunction1(){
+                let text = "A quick brown fox jumps over the lazy dog";
+                let n = text.search("A");
+                document.getElementById("demo1").innerHTML = "The &quot;A&quot; text is on "+n;
+        }
+        function myFunction2(){
+            let text = document.getElementById("demo2").innerHTML;
+            document.getElementById("demo2").innerHTML = text.replace("dog","dragon");
+        }
+        function myFunction3(){
+            //alert("abc");
+            let text = document.getElementById("demo2").innerHTML;
+            document.getElementById("demo2").innerHTML = text.replace(/Dog/i,"dragon");
+        }
+        function myFunction4(){
+            //alert("abc");
+            let text = document.getElementById("demo2").innerHTML;
+            document.getElementById("demo2").innerHTML = text.replace(/Dog/ig,"dragon");
+        }
+        function myFunction5(){
+            //alert("abc");
+            let text = document.getElementById("demo2").innerHTML;
+            let pattern = /lazy/;
+            document.getElementById("demo1").innerHTML = pattern.test(text);
+
+        }
+        function myFunction6(){
+            //alert("abc");
+            let text = document.getElementById("demo2").innerHTML;
+           
+            let result = text.match(/over?/g);
+            document.getElementById("demo1").innerHTML = result;
+
+
+        }
+        function myFunction7(){
+            //alert("abc");
+            let text = document.getElementById("demo2").innerHTML;
+           
+           const obj = /over/.exec(text);
+           document.getElementById("demo1").innerHTML = "Found "+obj[0]+" in position "+obj.index;
+
+
+        }
+    </script>
+</body>
+</html>

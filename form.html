@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <style>
+        body{
+            background: rgba(0, 0, 0, 0.7) url(Dark-Art-Grim_Reaper_01.jpg);
+            background-blend-mode: darken;
+            /* height: 1024px; */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+           
+            align-items: center;
+           
+         
+        }
+        .container{
+            transform: translateY(100%);
+            
+            width: 90%;
+            padding: 10px;
+            background-color: rgba(49, 54, 50, 0.7);
+        }      
+        
+        .formGroup{
+          
+            width: 90%;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .formGroup input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-style: none;
+            padding-left: 30px !important;
+        }
+        .formGroup i {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            color: grey;
+            font-size: smaller;
+            margin: 10px !important;
+        }
+
+       
+
+        input ::placeholder{
+            position: relative;
+            
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            
+        }
+        button{
+            justify-content: center; 
+            background-color: brown;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            
+            color: wheat;
+        }
+      
+        .button:hover
+        {
+            background-color: rgb(24, 23, 24);
+            color: whitesmoke;
+            font-weight: bold;
+            
+            
+        }
+        
+        
+    </style>    
+</head>
+<body>
+    <div class="container">
+        
+        <form action="">
+            <div class="formGroup">
+                <i class="fas fa-user"></i>
+                <input type="text" maxlength="20"  pattern="\w.{2,20}" placeholder="Enter your name" title="Must contain between 8-20 char"/>
+            </div>
+            <div class="formGroup">
+                <i class="fas fa-lock"></i>
+                <input type="password"  placeholder="Enter your password" title="8 to 20 char with Capital as well as digit and special char (!#$%&?)"/>
+            </div>  
+            <div class="formGroup">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Enter your Email" />
+            </div>  
+            <div class="formGroup">
+                <i class="fas fa-phone-square"></i>
+                <input type="tel" pattern="\+923[^4]\d{8}" placeholder="Enter your CellNO" required/>
+            </div>  
+            <div class="formGroup">
+                <i class=""></i>
+            </div>  
+            <button class="button">Clicked</button>
+            
+        </form>
+    </div>
+    <!-- <div>
+        (?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!#$%&?]{8,20}
+        Took me a while to figure out the restrictions, but I did it!
+
+        Restrictions: (Note: I have used >> and << to show the important characters)
+
+        Minimum 8 characters {>>8,20}<br>
+        Maximum 20 characters {8,>>20}<br>
+        At least one uppercase character (?=.*[A-Z])<br>
+        At least one lowercase character (?=.*[a-z])<br>
+        At least one digit (?=.*\d)<br>
+        At least one special character (?=.*[a-zA-Z >>!#$%&? "<<])[a-zA-Z0-9 >>!#$%&?<< ]<br>
+    </div> -->
+
+    <!-- <div>https://www.w3resource.com/javascript/form/email-validation.php</div> -->
+</body>
+</html>
